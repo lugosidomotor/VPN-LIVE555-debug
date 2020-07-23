@@ -9,3 +9,25 @@ sudo apt install make
 sudo make install
 live555MediaServe &
 ```
+
+## OpenVPN install:
+```bash
+
+```
+
+# Bastion
+
+## OpenVPN install:
+```bash
+
+```
+
+## VNC install:
+```bash
+
+```
+
+## WireShark install:
+```bash
+
+```
