@@ -31,3 +31,7 @@ live555MediaServer &
 ```bash
 
 ```
+
+
+sudo nano /etc/ssh/sshd_config
+sudo service ssh restart
