@@ -15,7 +15,7 @@ live555MediaServer &
 sudo apt install openvpn
 sudo openvpn --config stream.ovpn
 
-#ALLOW SSH
+#Allow SSH
 #sudo iptables -A INPUT -d x.x.x.x -p tcp --dport 22 -j ACCEPT
 ```
 
@@ -33,9 +33,12 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 8554 -j DNAT --to-dest 18.234.
 
 ## MISC
 ```bash
+#Allow SSH with Password
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 sudo service ssh restart
 sudo su --> passwd
+
+#SSH tunneling
 ssh  -g -L 8554:35.232.81.205:8554 -f -N cloud_user_p_a2f9a4af@35.232.81.205
 
 sudo apt install tcptrack
