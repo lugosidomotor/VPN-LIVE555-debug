@@ -35,4 +35,7 @@ sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/
 sudo service ssh restart
 sudo su --> passwd
 ssh  -g -L 8554:35.232.81.205:8554 -f -N cloud_user_p_a2f9a4af@35.232.81.205
+
+sudo apt install tcptrack
+sudo tcptrack -i eth1 port 8554
 ```
