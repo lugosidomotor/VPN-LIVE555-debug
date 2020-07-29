@@ -14,6 +14,8 @@ live555MediaServer &
 ```bash
 sudo apt install openvpn
 sudo openvpn --config stream.ovpn
+
+#ALLOW SSH
 #sudo iptables -A INPUT -d x.x.x.x -p tcp --dport 22 -j ACCEPT
 ```
 
