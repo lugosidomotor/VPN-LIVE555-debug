@@ -12,24 +12,19 @@ live555MediaServer &
 
 ## OpenVPN install:
 ```bash
-
+sudo apt install openvpn
+sudo openvpn --config stream.ovpn
 ```
 
 # Bastion
 
 ## OpenVPN install:
 ```bash
-
-```
-
-## VNC install:
-```bash
-
-```
-
-## WireShark install:
-```bash
-
+curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
+chmod +x openvpn-install.sh
+sudo ./openvpn-install.sh
+sudo iptables -t nat -A PREROUTING -p tcp --dport 8554 -j DNAT --to-dest 18.234.228.182:8554
+#sudo iptables -A POSTROUTING -t nat -p tcp -d 18.234.228.182 --dport 8554  -j MASQUERADE
 ```
 
 
