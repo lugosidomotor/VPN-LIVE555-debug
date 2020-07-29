@@ -44,3 +44,35 @@ ssh  -g -L 8554:35.232.81.205:8554 -f -N cloud_user_p_a2f9a4af@35.232.81.205
 sudo apt install tcptrack
 sudo tcptrack -i eth0 port 8554
 ```
+
+```bash
+port 1194
+proto udp
+dev tun
+user nobody
+group nogroup
+persist-key
+persist-tun
+keepalive 10 120
+topology subnet
+server 10.8.0.0 255.255.255.0
+ifconfig-pool-persist ipp.txt
+push "dhcp-option DNS 172.31.0.2"
+push "redirect-gateway def1 bypass-dhcp"
+dh none
+ecdh-curve prime256v1
+tls-crypt tls-crypt.key 0
+crl-verify crl.pem
+ca ca.crt
+cert server_ghY5fjjEZ8kDCtK4.crt
+key server_ghY5fjjEZ8kDCtK4.key
+auth SHA256
+cipher AES-128-GCM
+ncp-ciphers AES-128-GCM
+tls-server
+tls-version-min 1.2
+tls-cipher TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256
+client-config-dir /etc/openvpn/ccd
+status /var/log/openvpn/status.log
+verb 3
+```
