@@ -1,5 +1,5 @@
 ## Resources:
-https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-ubuntu-20-04
+https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-ubuntu-20-04 <br/>
 Delete iptables rules: https://www.cyberciti.biz/faq/how-to-iptables-delete-postrouting-rule/
 
 # Media Server
