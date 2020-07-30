@@ -26,8 +26,13 @@ sudo openvpn --config stream.ovpn
 curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
 chmod +x openvpn-install.sh
 sudo ./openvpn-install.sh
-sudo iptables -t nat -A PREROUTING -p tcp --dport 8554 -j DNAT --to-dest 18.234.228.182:8554
-#sudo iptables -A POSTROUTING -t nat -p tcp -d 18.234.228.182 --dport 8554  -j MASQUERADE
+
+sudo sysctl -w net.ipv4.ip_forward=1
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 8554 -j DNAT --to-dest x.x.x.x:8554
+#sudo iptables -A POSTROUTING -t nat -p tcp -d x.x.x.x --dport 8554  -j MASQUERADE
+
+#sudo iptables -L -x -n -v -t nat
 ```
 
 
@@ -39,7 +44,7 @@ sudo service ssh restart
 sudo su --> passwd
 
 #SSH tunneling
-ssh  -g -L 8554:35.232.81.205:8554 -f -N cloud_user_p_a2f9a4af@35.232.81.205
+ssh  -g -L 8554:x.x.x.x:8554 -f -N user@x.x.x.x
 
 sudo apt install tcptrack
 sudo tcptrack -i eth0 port 8554
