@@ -85,3 +85,26 @@ client-config-dir /etc/openvpn/ccd
 status /var/log/openvpn/status.log
 verb 3
 ```
+
+
+```bash
+client
+proto udp
+explicit-exit-notify
+remote 52.91.80.24 1194
+dev tun
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+remote-cert-tls server
+verify-x509-name server_iX3aPa2NdDtNwSdY name
+auth SHA256
+auth-nocache
+cipher AES-128-GCM
+tls-client
+tls-version-min 1.2
+tls-cipher TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256
+verb 3
+redirect-gateway def1
+```
