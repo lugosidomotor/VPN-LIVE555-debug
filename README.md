@@ -87,6 +87,7 @@ verb 3
 ```
 
 
+
 ```bash
 client
 proto udp
@@ -107,4 +108,16 @@ tls-version-min 1.2
 tls-cipher TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256
 verb 3
 redirect-gateway def1
+```
+
+## tail -f /var/log/syslog
+```bash
+Aug  2 08:53:58 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 MULTI: Learn: 10.8.0.2 -> client/176.63.5.169:43758
+Aug  2 08:53:58 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 MULTI: primary virtual IP for client/176.63.5.169:43758: 10.8.0.2
+Aug  2 08:53:59 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 PUSH: Received control message: 'PUSH_REQUEST'
+Aug  2 08:53:59 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 SENT CONTROL [client]: 'PUSH_REPLY,redirect-gateway def1,route-gateway 10.8.0.1,topology subnet,ping 10,ping-restart 120,ifconfig 10.8.0.2 255.255.255.0,peer-id 0,cipher AES-128-GCM' (status=1)
+Aug  2 08:53:59 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 Data Channel MTU parms [ L:1549 D:1450 EF:49 EB:406 ET:0 EL:3 ]
+Aug  2 08:53:59 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 Outgoing Data Channel: Cipher 'AES-128-GCM' initialized with 128 bit key
+Aug  2 08:53:59 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 Incoming Data Channel: Cipher 'AES-128-GCM' initialized with 128 bit key
+Aug  2 08:54:05 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 MULTI: bad source address from client [10.0.2.15], packet dropped
 ```
