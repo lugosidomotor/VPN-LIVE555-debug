@@ -121,3 +121,6 @@ Aug  2 08:53:59 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 Ou
 Aug  2 08:53:59 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 Incoming Data Channel: Cipher 'AES-128-GCM' initialized with 128 bit key
 Aug  2 08:54:05 ip-172-31-40-48 ovpn-server[20840]: client/176.63.5.169:43758 MULTI: bad source address from client [10.0.2.15], packet dropped
 ```
+
+
+disable Source/Destination Check
